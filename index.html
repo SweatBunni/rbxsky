@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rbxsky | Roblox Gambling Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">☁</div>
+        <div>
+          <h1>rbxsky</h1>
+          <p>Play. Win. Flex.</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#games">Games</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#chat">Chat</a>
+        <a href="#fairness">Provably Fair</a>
+      </nav>
+      <div class="wallet">
+        <span>Balance</span>
+        <strong id="balanceDisplay">0.00 R$</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">NEW SEASON: SKY JACKPOT LIVE</p>
+          <h2>Roblox-style betting with a sky-high vibe.</h2>
+          <p>
+            Experience coinflip battles, crash rounds, and mines action in one sleek
+            platform inspired by top Roblox gambling communities.
+          </p>
+          <div class="hero-actions">
+            <button id="quickDeposit">Deposit +500 R$</button>
+            <button class="ghost" id="quickWithdraw">Withdraw -250 R$</button>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <article>
+            <h3>$142,991</h3>
+            <p>Daily Volume</p>
+          </article>
+          <article>
+            <h3>4,329</h3>
+            <p>Online Players</p>
+          </article>
+          <article>
+            <h3>97.9%</h3>
+            <p>Instant Payout Rate</p>
+          </article>
+          <article>
+            <h3>$25,000</h3>
+            <p>Hourly Jackpot</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="games" class="games">
+        <h2>Games</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Sky Coinflip</h3>
+            <p>Pick heads or tails and double your stake.</p>
+            <div class="controls">
+              <label>
+                Bet
+                <input id="coinflipBet" type="number" min="1" value="50" />
+              </label>
+              <div class="row">
+                <button data-side="heads" class="coinflipBtn">Heads</button>
+                <button data-side="tails" class="coinflipBtn">Tails</button>
+              </div>
+            </div>
+            <p id="coinflipResult" class="result">Place a bet to begin.</p>
+          </article>
+
+          <article class="card">
+            <h3>Sky Crash</h3>
+            <p>Watch multipliers rise. Cash out before it crashes.</p>
+            <div class="controls">
+              <label>
+                Bet
+                <input id="crashBet" type="number" min="1" value="75" />
+              </label>
+              <div class="row">
+                <button id="startCrash">Start Round</button>
+                <button id="cashoutCrash" class="ghost" disabled>Cash Out</button>
+              </div>
+            </div>
+            <p id="crashResult" class="result">Waiting for next round...</p>
+            <div class="meter">
+              <div id="crashBar"></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Sky Mines</h3>
+            <p>Reveal tiles, avoid mines, and secure profits.</p>
+            <div class="controls">
+              <label>
+                Bet
+                <input id="minesBet" type="number" min="1" value="40" />
+              </label>
+              <div class="row">
+                <button id="newMinesGame">New Grid</button>
+                <button id="cashoutMines" class="ghost" disabled>Cash Out</button>
+              </div>
+            </div>
+            <div id="minesGrid" class="mines-grid"></div>
+            <p id="minesResult" class="result">Start a new grid to play.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <article id="leaderboard" class="panel">
+          <h2>Top Winners</h2>
+          <ul id="leaderboardList"></ul>
+        </article>
+
+        <article id="chat" class="panel">
+          <h2>Live Chat</h2>
+          <div id="chatFeed" class="chat-feed"></div>
+          <form id="chatForm">
+            <input id="chatInput" placeholder="Type your message" maxlength="100" />
+            <button type="submit">Send</button>
+          </form>
+        </article>
+      </section>
+
+      <section id="fairness" class="fairness">
+        <h2>Provably Fair & Responsible Gaming</h2>
+        <p>
+          Every round is generated with client/server seeds and nonce tracking for
+          transparent outcomes. Set limits, play responsibly, and only wager what you
+          can afford to lose.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 rbxsky. Not affiliated with Roblox Corporation.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
